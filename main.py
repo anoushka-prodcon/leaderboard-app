@@ -41,10 +41,10 @@ def home(request: Request):
 
     leaderboard = process_data(data)
 
-    return templates.TemplateResponse("index.html", {
-        "request": request,
-        "leaderboard": leaderboard
-    })
+    return templates.TemplateResponse(
+        name="index.html",
+        context={"request": request, "leaderboard": leaderboard}
+    )
 
 import os
 
