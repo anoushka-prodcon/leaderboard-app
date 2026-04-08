@@ -4,7 +4,10 @@ import json
 from datetime import datetime
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 # Process data
 def process_data(data):
