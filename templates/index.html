@@ -65,28 +65,25 @@
 
 <h1>🏆 Leaderboard</h1>
 
-{% if leaderboard and leaderboard|length >= 3 %}
+{% if top1 and top2 and top3 %}
 <div class="top-container">
 
-  <!-- 🥇 -->
   <div class="card gold">
     <h2>🥇 1st</h2>
-    <p><strong>{{ leaderboard[0]["name"] }}</strong></p>
-    <p>Total: {{ leaderboard[0]["total"] }}</p>
+    <p><strong>{{ top1["name"] }}</strong></p>
+    <p>Total: {{ top1["total"] }}</p>
   </div>
 
-  <!-- 🥈 -->
   <div class="card silver">
     <h2>🥈 2nd</h2>
-    <p><strong>{{ leaderboard[1]["name"] }}</strong></p>
-    <p>Total: {{ leaderboard[1]["total"] }}</p>
+    <p><strong>{{ top2["name"] }}</strong></p>
+    <p>Total: {{ top2["total"] }}</p>
   </div>
 
-  <!-- 🥉 -->
   <div class="card bronze">
     <h2>🥉 3rd</h2>
-    <p><strong>{{ leaderboard[2]["name"] }}</strong></p>
-    <p>Total: {{ leaderboard[2]["total"] }}</p>
+    <p><strong>{{ top3["name"] }}</strong></p>
+    <p>Total: {{ top3["total"] }}</p>
   </div>
 
 </div>

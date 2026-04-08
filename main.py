@@ -45,18 +45,24 @@ def home(request: Request):
 
         leaderboard = process_data(data)
 
+        # ✅ PRE-COMPUTE TOP 3
+        top1 = leaderboard[0] if len(leaderboard) > 0 else None
+        top2 = leaderboard[1] if len(leaderboard) > 1 else None
+        top3 = leaderboard[2] if len(leaderboard) > 2 else None
+
         return templates.TemplateResponse(
             "index.html",
             {
                 "request": request,
-                "leaderboard": leaderboard
+                "leaderboard": leaderboard,
+                "top1": top1,
+                "top2": top2,
+                "top3": top3
             }
         )
 
     except Exception as e:
-        # 🔥 IMPORTANT: This will show exact error in Render logs
         return {"error": str(e)}
-
 
 # ✅ Required for Render
 if __name__ == "__main__":
